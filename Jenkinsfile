@@ -1,5 +1,7 @@
 pipeline{
-    agent win
+    agent{
+        label 'win'
+    }
     stages{
         stage('running-test-cases'){
             steps{
