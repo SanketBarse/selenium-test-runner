@@ -1,5 +1,5 @@
 pipeline{
-    agent windows
+    agent win
     stages{
         stage('running-test-cases'){
             steps{
