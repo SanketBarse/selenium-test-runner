@@ -5,15 +5,16 @@ pipeline{
     stages{
         stage('running-test-cases'){
             steps{
-                bat 'docker compose up'
+                bat 'docker compose up -d'
             }
         }
+        
 
-        stage('tear-down'){
-            steps{
-                bat 'docker compose down'
-            }
+    }
+
+    post{
+        success {
+        bat "docker compose down"
         }
-
     }
 }
